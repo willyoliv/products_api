@@ -11,7 +11,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/products")
 public class ProductsController {
 
     private final ProductService productService;
@@ -22,8 +22,8 @@ public class ProductsController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> addProduct (@RequestBody Product product) {
-        return new ResponseEntity<>(productService.addProduct(product),HttpStatus.CREATED );
+    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+        return new ResponseEntity<>(productService.addProduct(product),HttpStatus.CREATED);
     }
 
     @PutMapping("/update-stock")
